@@ -34,7 +34,8 @@ libGrafoKt.jar: $(GLIB)/Color.class\
         $(GLIB)/VerticePrim.class\
         $(GLIB)/PrimAMC.class\
         $(GLIB)/TablaGrafoDirigido.class\
-        $(GLIB)/TablaGrafoNoDirigido.class
+        $(GLIB)/TablaGrafoNoDirigido.class\
+        $(GLIB)/CCM_BellmanFord.class
 
 	jar -cvf $@ $(GLIB)/*.class 
 
@@ -130,6 +131,9 @@ $(GLIB)/TablaGrafoDirigido.class: $(GLIB)/TablaGrafoDirigido.kt
 
 $(GLIB)/TablaGrafoNoDirigido.class: $(GLIB)/TablaGrafoNoDirigido.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/TablaGrafoNoDirigido.kt
+
+$(GLIB)/CCM_BellmanFord.class: $(GLIB)/CCM_BellmanFord.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_BellmanFord.kt
 
 clean:
 	rm -rf libGrafoKt.jar META-INF $(GLIB)/*.class
