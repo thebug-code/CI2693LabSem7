@@ -15,29 +15,29 @@ libGrafoKt.jar: $(GLIB)/Color.class\
 		$(GLIB)/GrafoNoDirigido.class\
 		$(GLIB)/GrafoDirigidoCosto.class\
 		$(GLIB)/GrafoNoDirigidoCosto.class\
-        $(GLIB)/VerticeTp.class\
+		$(GLIB)/VerticeTp.class\
 		$(GLIB)/VerticeDFS.class\
 		$(GLIB)/VerticeBFS.class\
 		$(GLIB)/BFS.class\
 		$(GLIB)/DFS.class\
-        $(GLIB)/OrdenamientoTopologico.class\
-        $(GLIB)/CicloDigrafo.class\
-        $(GLIB)/ParticionNiveles.class\
-        $(GLIB)/Utilidades.class\
-        $(GLIB)/CFC.class\
-        $(GLIB)/VerticeDFSCC.class\
-        $(GLIB)/ComponentesConexasDFS.class\
-        $(GLIB)/ElementoCD.class\
-        $(GLIB)/ConjuntosDisjuntos.class\
-        $(GLIB)/ComponentesConexasCD.class\
-        $(GLIB)/KruskalAMC.class\
-        $(GLIB)/VerticePrim.class\
-        $(GLIB)/PrimAMC.class\
-        $(GLIB)/TablaGrafoDirigido.class\
-        $(GLIB)/TablaGrafoNoDirigido.class\
-        $(GLIB)/CCM_BellmanFord.class\
+		$(GLIB)/OrdenamientoTopologico.class\
+		$(GLIB)/CicloDigrafo.class\
+		$(GLIB)/ParticionNiveles.class\
+		$(GLIB)/Utilidades.class\
+		$(GLIB)/CFC.class\
+		$(GLIB)/VerticeDFSCC.class\
+		$(GLIB)/ComponentesConexasDFS.class\
+		$(GLIB)/ElementoCD.class\
+		$(GLIB)/ConjuntosDisjuntos.class\
+		$(GLIB)/ComponentesConexasCD.class\
+		$(GLIB)/KruskalAMC.class\
+		$(GLIB)/VerticePrim.class\
+		$(GLIB)/PrimAMC.class\
+		$(GLIB)/TablaGrafoDirigido.class\
+		$(GLIB)/TablaGrafoNoDirigido.class\
+		$(GLIB)/CCM_BellmanFord.class\
 		$(GLIB)/VerticeDijkstra.class\
-        $(GLIB)/CCM_Dijkstra.class
+		$(GLIB)/CCM_Dijkstra.class
 
 
 	jar -cvf $@ $(GLIB)/*.class 
