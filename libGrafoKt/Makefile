@@ -35,7 +35,6 @@ libGrafoKt.jar: $(GLIB)/Color.class\
 		$(GLIB)/PrimAMC.class\
 		$(GLIB)/TablaGrafoDirigido.class\
 		$(GLIB)/TablaGrafoNoDirigido.class\
-		$(GLIB)/CCM_BellmanFord.class\
 		$(GLIB)/VerticeDijkstra.class\
 		$(GLIB)/CCM_Dijkstra.class\
         $(GLIB)/CCM_BellmanFord.class\
