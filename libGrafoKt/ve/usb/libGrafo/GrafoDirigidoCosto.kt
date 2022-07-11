@@ -6,6 +6,7 @@ import java.util.LinkedList
 public class GrafoDirigidoCosto : Grafo {
     var numDeVertices : Int = 0
     var numDeLados : Int = 0
+    val E: MutableList<ArcoCosto> = mutableListOf()
     var adjList : Array<LinkedList<ArcoCosto>>
 
     /**
@@ -67,6 +68,7 @@ public class GrafoDirigidoCosto : Grafo {
         }
 
         // Agregar el lado al grafo
+        E.add(a)
         this.adjList[a.x].add(a)
         this.numDeLados++
         return true
@@ -180,31 +182,24 @@ public class GrafoDirigidoCosto : Grafo {
     /**
      * Clase interna con la implementación concreta de Grafo dirigido iterator.
     */
-    inner class GrafoDirigidoCostoIterador(g: GrafoDirigidoCosto) : Iterator<ArcoCosto> {
-        var ll : MutableList<ArcoCosto> = mutableListOf()
-        init {
-            for (i in g.adjList) {
-                ll.addAll(i)
-            }
-        }
-        
+    inner class GrafoDirigidoCostoIterador() : Iterator<ArcoCosto> {  
         var x = 0
-        var actual = ll[0]
-        var llIterable = ll.listIterator()
+        var actual = E[0]
+        var EIterable = E.listIterator()
         
-        override fun hasNext(): Boolean = llIterable.hasNext()
+        override fun hasNext(): Boolean = EIterable.hasNext()
 
         override fun next(): ArcoCosto {
-            if (!llIterable.hasNext()) {     
+            if (!EIterable.hasNext()) {     
                 throw RuntimeException("No hay más elementos que iterar.")  
             }
 
             var y = actual
-            if (x + 1 < ll.size) {
-                actual = ll[x+1]
+            if (x + 1 < E.size) {
+                actual = E[x + 1]
 		        x++
             }
-            llIterable.next()
+            EIterable.next()
             return y
         }
     }
@@ -215,7 +210,7 @@ public class GrafoDirigidoCosto : Grafo {
      * Poscondición: true.
      * Tiempo de Complejidad: O(E).
     */
-    override operator fun iterator(): Iterator<ArcoCosto> = GrafoDirigidoCostoIterador(this)
+    override operator fun iterator(): Iterator<ArcoCosto> = GrafoDirigidoCostoIterador()
     
     /**
      * Retorna un string con la representación del contenido del digrafo.
@@ -246,14 +241,7 @@ public class GrafoDirigidoCosto : Grafo {
      * Precondición: El vértice fuente pertenece al grafo.
      * Tiempo de la operación: O(|E|).
     */
-    private fun estaElLadoEnElGrafo(l: ArcoCosto) : Boolean {
-        for (i in this.adjList[l.x]) {
-            if (i.y == l.y) {
-                return true
-            }
-        }
-        return false
-    }
+    private fun estaElLadoEnElGrafo(l: ArcoCosto) : Boolean = l in E
 
     /**
      * Indica si el vértice [v] pertenece al grafo; en caso afirmativo retorna true, 
