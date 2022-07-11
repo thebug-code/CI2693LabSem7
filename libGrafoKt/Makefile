@@ -37,7 +37,9 @@ libGrafoKt.jar: $(GLIB)/Color.class\
 		$(GLIB)/TablaGrafoNoDirigido.class\
 		$(GLIB)/CCM_BellmanFord.class\
 		$(GLIB)/VerticeDijkstra.class\
-		$(GLIB)/CCM_Dijkstra.class
+		$(GLIB)/CCM_Dijkstra.class\
+        $(GLIB)/CCM_BellmanFord.class\
+        $(GLIB)/CCM_DAG.class
 
 
 	jar -cvf $@ $(GLIB)/*.class 
@@ -143,6 +145,12 @@ $(GLIB)/VerticeDijkstra.class: $(GLIB)/VerticeDijkstra.kt
 
 $(GLIB)/CCM_Dijkstra.class: $(GLIB)/CCM_Dijkstra.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_Dijkstra.kt
+
+$(GLIB)/CCM_BellmanFord.class: $(GLIB)/CCM_BellmanFord.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_BellmanFord.kt
+
+$(GLIB)/CCM_DAG.class: $(GLIB)/CCM_DAG.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_DAG.kt
 
 clean:
 	rm -rf libGrafoKt.jar META-INF $(GLIB)/*.class
