@@ -37,6 +37,7 @@ libGrafoKt.jar: $(GLIB)/Color.class\
 		$(GLIB)/TablaGrafoNoDirigido.class\
 		$(GLIB)/VerticeDijkstra.class\
 		$(GLIB)/CCM_Dijkstra.class\
+		$(GLIB)/VerticeBF.class\
         $(GLIB)/CCM_BellmanFord.class\
         $(GLIB)/CCM_DAG.class
 
@@ -136,14 +137,14 @@ $(GLIB)/TablaGrafoDirigido.class: $(GLIB)/TablaGrafoDirigido.kt
 $(GLIB)/TablaGrafoNoDirigido.class: $(GLIB)/TablaGrafoNoDirigido.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/TablaGrafoNoDirigido.kt
 
-$(GLIB)/CCM_BellmanFord.class: $(GLIB)/CCM_BellmanFord.kt
-	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_BellmanFord.kt
-
 $(GLIB)/VerticeDijkstra.class: $(GLIB)/VerticeDijkstra.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/VerticeDijkstra.kt
 
 $(GLIB)/CCM_Dijkstra.class: $(GLIB)/CCM_Dijkstra.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_Dijkstra.kt
+
+$(GLIB)/VerticeBF.class: $(GLIB)/VerticeBF.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/VerticeBF.kt
 
 $(GLIB)/CCM_BellmanFord.class: $(GLIB)/CCM_BellmanFord.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_BellmanFord.kt
