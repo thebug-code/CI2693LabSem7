@@ -70,7 +70,6 @@ public class CCM_BellmanFord(val g: GrafoDirigidoCosto, val s: Int) {
     /**
      * Retorna los arcos del ciclo negativo alcanzable desde el vértice fuente fijo [s],
      * con la forma <u, v>, <v, w>, ... ,<y, x>, <x, u>
-     * Si 
      * Precondición: existe un ciclo negativo alcanzablde desde el vértice fuente fijo [s].
      * Postcondición: δ([s], k_i) = -∞, dónde k_i corresponde a los vértices del ciclo negativo, 
      * (vértices fuentes de de cada lado de [obtenerCicloNegativo]).
