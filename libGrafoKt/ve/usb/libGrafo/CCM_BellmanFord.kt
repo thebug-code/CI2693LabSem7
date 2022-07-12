@@ -48,9 +48,9 @@ public class CCM_BellmanFord(val g: GrafoDirigidoCosto, val s: Int) {
         if (v != -1) {
             var y: VerticeBF = vertices[v]
 
-            while(true) { 
+            while(vertices[y.pred!!.fuente()].v != v) { 
                 cicloNegativo.addFirst(y.pred)
-                if (vertices[y.pred!!.fuente()].v == v && cicloNegativo.size > 1) break 
+                //if (vertices[y.pred!!.fuente()].v == v && cicloNegativo.size > 1) break 
                 y = vertices[y.pred!!.x]
             }
         }
