@@ -160,7 +160,7 @@ public class CCM_BellmanFord(val g: GrafoDirigidoCosto, val s: Int) {
     /**
      * Aplica el método de relación al lado [l] del digrafo [g].
      * Precondición: (u, v) (l) es un lado perteneciente al grafo.
-     * Postcondición: v.d ≤ u.d + w(u, v) ∧ v.d = δ(s, v). 
+     * Postcondición: v.d ≤ u.d + w(u, v). 
      * Tiempo de la operación: O(1).
      */
     private fun relajacion(l: ArcoCosto) {
