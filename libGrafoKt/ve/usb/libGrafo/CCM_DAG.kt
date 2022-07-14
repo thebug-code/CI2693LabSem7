@@ -120,7 +120,7 @@ public class CCM_DAG(val g: GrafoDirigidoCosto, val s: Int) {
     /**
      * Aplica el método de relación al lado [l] del grafo [g]
      * Precondición: (u, v) (l) es un lado perteneciente al grafo.
-     * Postcondición: v.d ≤ u.d + w(u, v) ∧ v.d = δ(s, v). 
+     * Postcondición: v.d ≤ u.d + w(u, v). 
      * Tiempo de la operación: O(1).
     */
     private fun relajacion(l: ArcoCosto) {
