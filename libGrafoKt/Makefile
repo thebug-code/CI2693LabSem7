@@ -15,26 +15,32 @@ libGrafoKt.jar: $(GLIB)/Color.class\
 		$(GLIB)/GrafoNoDirigido.class\
 		$(GLIB)/GrafoDirigidoCosto.class\
 		$(GLIB)/GrafoNoDirigidoCosto.class\
-        $(GLIB)/VerticeTp.class\
+		$(GLIB)/VerticeTp.class\
 		$(GLIB)/VerticeDFS.class\
 		$(GLIB)/VerticeBFS.class\
 		$(GLIB)/BFS.class\
 		$(GLIB)/DFS.class\
-        $(GLIB)/OrdenamientoTopologico.class\
-        $(GLIB)/CicloDigrafo.class\
-        $(GLIB)/ParticionNiveles.class\
-        $(GLIB)/Utilidades.class\
-        $(GLIB)/CFC.class\
-        $(GLIB)/VerticeDFSCC.class\
-        $(GLIB)/ComponentesConexasDFS.class\
-        $(GLIB)/ElementoCD.class\
-        $(GLIB)/ConjuntosDisjuntos.class\
-        $(GLIB)/ComponentesConexasCD.class\
-        $(GLIB)/KruskalAMC.class\
-        $(GLIB)/VerticePrim.class\
-        $(GLIB)/PrimAMC.class\
-        $(GLIB)/TablaGrafoDirigido.class\
-        $(GLIB)/TablaGrafoNoDirigido.class
+		$(GLIB)/OrdenamientoTopologico.class\
+		$(GLIB)/CicloDigrafo.class\
+		$(GLIB)/ParticionNiveles.class\
+		$(GLIB)/Utilidades.class\
+		$(GLIB)/CFC.class\
+		$(GLIB)/VerticeDFSCC.class\
+		$(GLIB)/ComponentesConexasDFS.class\
+		$(GLIB)/ElementoCD.class\
+		$(GLIB)/ConjuntosDisjuntos.class\
+		$(GLIB)/ComponentesConexasCD.class\
+		$(GLIB)/KruskalAMC.class\
+		$(GLIB)/VerticePrim.class\
+		$(GLIB)/PrimAMC.class\
+		$(GLIB)/TablaGrafoDirigido.class\
+		$(GLIB)/TablaGrafoNoDirigido.class\
+		$(GLIB)/VerticeDijkstra.class\
+		$(GLIB)/CCM_Dijkstra.class\
+		$(GLIB)/VerticeBF.class\
+        $(GLIB)/CCM_BellmanFord.class\
+        $(GLIB)/CCM_DAG.class\
+        $(GLIB)/CaminoCriticoPERT.class
 
 	jar -cvf $@ $(GLIB)/*.class 
 
@@ -130,6 +136,24 @@ $(GLIB)/TablaGrafoDirigido.class: $(GLIB)/TablaGrafoDirigido.kt
 
 $(GLIB)/TablaGrafoNoDirigido.class: $(GLIB)/TablaGrafoNoDirigido.kt
 	$(KC) $(KFLAG) $(GLIB): $(GLIB)/TablaGrafoNoDirigido.kt
+
+$(GLIB)/VerticeDijkstra.class: $(GLIB)/VerticeDijkstra.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/VerticeDijkstra.kt
+
+$(GLIB)/CCM_Dijkstra.class: $(GLIB)/CCM_Dijkstra.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_Dijkstra.kt
+
+$(GLIB)/VerticeBF.class: $(GLIB)/VerticeBF.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/VerticeBF.kt
+
+$(GLIB)/CCM_BellmanFord.class: $(GLIB)/CCM_BellmanFord.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_BellmanFord.kt
+
+$(GLIB)/CCM_DAG.class: $(GLIB)/CCM_DAG.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CCM_DAG.kt
+
+$(GLIB)/CaminoCriticoPERT.class: $(GLIB)/CaminoCriticoPERT.kt
+	$(KC) $(KFLAG) $(GLIB): $(GLIB)/CaminoCriticoPERT.kt
 
 clean:
 	rm -rf libGrafoKt.jar META-INF $(GLIB)/*.class

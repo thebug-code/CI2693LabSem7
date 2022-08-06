@@ -7,7 +7,7 @@ import java.util.Queue
    Con la creación de la instancia, se ejecuta el algoritmo BFS
    desde el vértice s
 */
-public class BFS(v: Int, val g: Grafo, val s: Int) {
+public class BFS(val g: Grafo, val s: Int) {
     private val vertices : Array<VerticeBFS>
     
     /**
